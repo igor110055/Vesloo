@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @Vesloo
-- 👀 I’m interested in coding especially javascript
+- 👀 I’m interested in coding especialy javascript and php
 - 🌱 I’m currently learning typescript
 - 💞️ I’m looking to collaborate on javascript projet (node.js, react.js)
 - 📫 How to reach me ...
