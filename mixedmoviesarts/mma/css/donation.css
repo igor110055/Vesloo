@@ -1,0 +1,42 @@
+
+.cagnotte {
+    margin: auto;
+    text-align: center;
+    height: 320px;
+}
+
+@media screen and (min-width:1000px) {
+  .corps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-auto-columns: 1fr;
+      grid-auto-rows: 1fr;
+      gap: 0px 0px;
+      grid-auto-flow: column;
+      grid-template-areas:
+        "info1 info2"
+        "info1 info2";
+    }
+    
+    .info1 { grid-area: info1; }
+    
+    .info2 { grid-area: info2; }
+    
+    .info3 { grid-area: info3; }
+    
+}
+
+@media screen and (min-width:600px) {
+  .corps {
+      margin: auto;
+      width:90%;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .corps {
+      margin: auto;
+      width:100%;
+  }
+}

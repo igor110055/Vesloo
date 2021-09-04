@@ -1,0 +1,44 @@
+RewriteEngine On
+
+
+
+RewriteRule mma-home /mma/component/index.php
+RewriteRule mma-donation /mma/component/donation.php
+RewriteRule mma-billetterie /mma/component/billetterie.php
+
+RewriteRule mma-benevole /mma/component/association/benevole.php
+RewriteRule mma-equipe /mma/component/association/equipe.php
+RewriteRule mma-histoire /mma/component/association/histoire.php
+RewriteRule mma-recrutement /mma/component/association/recrutement.php
+RewriteRule mma-reference /mma/component/association/reference.php
+
+RewriteRule mma-films /mma/component/activites/films.php
+RewriteRule mma-photos /mma/component/activites/photos.php
+RewriteRule mma-art /mma/component/activites/art.php
+RewriteRule mma-concert /mma/component/activites/concerts.php
+
+RewriteRule mma-support /mma/component/infospratiques/support.php
+RewriteRule mma-contact /mma/component/infospratiques/contact.php
+RewriteRule mma-newsletter /mma/component/infospratiques/newsletter.php
+RewriteRule mma-partenaire /mma/component/infospratiques/partenaires.php
+RewriteRule mma-reseaux /mma/component/infospratiques/reseaux.php
+
+RewriteRule mma-connexion /mma/component/compte/connexion.php
+RewriteRule mma-inscription /mma/component/compte/inscription.php
+RewriteRule mma-compte /mma/component/compte/compte.php
+RewriteRule mma-deconnexion /mma/component/compte/deconnexion.php
+
+
+
+
+
+RewriteRule forum-home /mma/component/forum/index.php
+RewriteRule forum-topic /mma/component/forum/topic.php
+RewriteRule forum-chat /mma/component/forum/chat.php
+
+
+
+
+
+RewriteRule admin-connexion /admin/connexion.php
+RewriteRule admin-home /admin/index.php

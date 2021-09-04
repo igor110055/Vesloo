@@ -1,0 +1,44 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . . . . . . . . .";
+    margin: auto;
+    margin-top: 50px;
+    width:90%;
+  }
+
+  .pressed {
+      background-color: grey;
+  }
+
+.key {
+    margin: auto;
+    justify-content: center;
+    padding: 10px;
+    color:white
+}
+
+.click {
+    color: white;
+    margin:auto;
+    width:fit-content;
+    margin-top:300px;
+    border:solid 1px white;
+    padding:10px;
+}
+
+body {
+    background-color: black;
+}
+
+.cube {
+    color: white;
+    margin:auto;
+    width:fit-content;
+    border:solid 1px white;
+    padding:10px;
+}
