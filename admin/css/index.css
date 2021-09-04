@@ -1,0 +1,59 @@
+.corps{
+    background-color: darkgrey;
+}
+
+h2 {
+    text-align: center;
+}
+
+.profil {
+    border: solid 2px black;
+}
+
+.ajouter-email {
+    width:300px;
+    margin: auto;
+}
+
+.corps-component {
+    height:300px;
+    overflow-y: auto;
+    color:white;
+    background-color: darkslategrey;
+    padding:5px;
+    margin:5px;
+}
+
+.site {
+    margin: 5px;
+    text-align: center;
+}
+
+.topic {
+    text-align: start;
+}
+
+@media screen and (min-width:900px) {
+    .corps { 
+        margin: auto;
+        color:white;
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        grid-template-rows: repeat(2, 1fr); 
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
+        width:90%;
+    }
+    .div1 { grid-area: 1 / 1 / 2 / 2; } 
+    .div2 { grid-area: 1 / 2 / 2 / 3; } 
+    .div3 { grid-area: 2 / 1 / 3 / 2; } 
+    .div4 { grid-area: 2 / 2 / 3 / 3; } 
+    .div5 { grid-area: 1 / 3 / 2 / 4; } 
+    .div6 { grid-area: 2 / 3 / 3 / 4; } 
+}
+
+@media screen and (max-width: 900px) {
+    .corps {
+        width:100%;
+    }
+}
