@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My vue app</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <p class="h-100 bg-dark text-white p-5">
+                    user is {{ user }}
+                </p>
+    
+                <input type="text" placeholder="username" v-model="user">
+            </div>
+            <div class="row">
+                <div class="col-3" v-for="produit in produits">
+                    <p class="h-100 bg-dark text-white center">
+                        {{ produit }}
+                        <br>
+                        <button class="btn btn-primary" v-on:click="commander(produit)">Commander</button>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <p class="h-100 bg-dark text-white p-5" v-for="command in commands">
+                    {{ command }}
+                    <button class="btn btn-primary align-right" v-on:click="remove(command)">Remove</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                user: "",
+                produits: ["Pizza", "Hamburger", "Cheeseburger", "Tacos"],
+                commands: [],
+            },
+            methods: {
+                commander: function(produit){
+                    this.commands.push(produit);
+                },
+                remove: function(command){
+                    var index = this.commands.indexOf(command);
+                    this.commands.splice(index, 1);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
