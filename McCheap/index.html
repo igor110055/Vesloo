@@ -10,40 +10,82 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 </head>
 <body>
+
+    
     <div id="app">
         <div class="container">
+            <utilisateur v-bind:user="user"></utilisateur>
             <div class="row">
-                <p class="h-100 bg-dark text-white p-5">
-                    user is {{ user }}
-                </p>
-    
-                <input type="text" placeholder="username" v-model="user">
+                <fiche-produit v-for="produit in produits" v-bind:produit="produit" v-on:commande_passee="commander"></fiche-produit>
             </div>
-            <div class="row">
-                <div class="col-3" v-for="produit in produits">
-                    <p class="h-100 bg-dark text-white center">
-                        {{ produit }}
-                        <br>
-                        <button class="btn btn-primary" v-on:click="commander(produit)">Commander</button>
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <p class="h-100 bg-dark text-white p-5" v-for="command in commands">
-                    {{ command }}
-                    <button class="btn btn-primary align-right" v-on:click="remove(command)">Remove</button>
-                </p>
+            <div class="row" v-if="commands.length > 0">
+                <h1 v-bind:class="affichage">Commandes</h1>
+                <ul>
+                    <fiche-commande v-for="command in commands" v-bind:command="command" v-on:command_removed="remove"></fiche-commande>
+                </ul>
             </div>
         </div>
     </div>
     
+
+
+
     <script>
+
+        Vue.component('utilisateur', {
+            template: `<div class="row">
+                <p class="h-100 bg-dark text-white p-5">
+                    user is {{ user }}
+                </p>
+                <input type="text" placeholder="username" v-model="user">
+                </div>`,
+            props: ['user']
+        });
+
+        Vue.component('fiche-produit', {
+            template: `<div class="col-3" >
+                <p class="h-100 bg-dark text-white center">
+                    {{ produit }}
+                    <br>
+                    <button class="btn btn-primary" v-on:click="passerCommande(produit)">Commander</button>
+                </p>
+                </div>`,
+            props: ["produit"],
+            methods: {
+                passerCommande: function (produit){
+                    this.$emit('commande_passee', produit);
+                }
+            }
+        });
+
+        Vue.component('fiche-commande', {
+            template: `
+                    <li>
+                        <p>
+                            {{ command }}
+                            <button class="btn btn-primary align-right" v-on:click="removeCommand(command)">Remove</button>
+                        </p>
+                    </li>`,
+            props: ["command"],
+            methods: {
+                removeCommand: function(command){
+                    this.$emit('command_removed', command);
+                }
+            }
+        })
+
+
+
+
+
         var app = new Vue({
             el: "#app",
             data: {
                 user: "",
                 produits: ["Pizza", "Hamburger", "Cheeseburger", "Tacos"],
+                prices: [],
                 commands: [],
+                affichage: "display-4",
             },
             methods: {
                 commander: function(produit){
@@ -52,9 +94,11 @@
                 remove: function(command){
                     var index = this.commands.indexOf(command);
                     this.commands.splice(index, 1);
-                }
+                },
             }
         })
     </script>
+
+
 </body>
 </html>
