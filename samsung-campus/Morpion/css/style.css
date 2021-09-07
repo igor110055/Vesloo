@@ -1,0 +1,46 @@
+#grid {
+  border:solid 2px black;
+  margin:auto;
+}
+.win-display {
+  width:200px;
+  height:50px;
+  font-size: 32px;
+}
+@media screen and (min-width: 820px) {
+  #grid td {
+    width:250px;
+    height:250px;
+    border:solid 2px black;
+    text-align: center;
+    font-size: 200px;
+    font-family: sans-serif;
+  }
+}
+@media screen and (max-width:820px) {
+  #grid td {
+    width:150px;
+    height:150px;
+    border:solid 2px black;
+    text-align: center;
+    font-size: 150px;
+    font-family: sans-serif;
+  }
+}
+@media screen and (max-width:520px) {
+  #grid td {
+    width:100px;
+    height:100px;
+    border:solid 2px black;
+    text-align: center;
+    font-size: 50px;
+    font-family: sans-serif;
+  }
+}
+.won {
+  background-color: grey;
+
+}
+.won div {
+  
+}
