@@ -1,0 +1,61 @@
+
+@media screen and (min-width: 800px) {
+    .chat {
+        margin: auto;
+        width:60%;
+        justify-content: center;
+        margin-top: 25%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            "textbox textbox textbox btn";
+    }
+    
+    .messages {
+        width: 60%;
+        margin: auto;
+        color:white;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .chat {
+        margin: auto;
+        width:100%;
+        justify-content: center;
+        margin-top: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            "textbox textbox textbox btn";
+    }
+    
+    .messages {
+        width: 100%;
+        margin: auto;
+        color:white;
+    }
+}
+
+
+.btn { 
+    grid-area: btn; 
+}
+
+.textbox {
+    margin: auto;
+    width:100%;
+    grid-area: textbox;
+}
+
+body {
+    background-color: #595959;
+}
+
+.list {
+    list-style-type: none;
+}
